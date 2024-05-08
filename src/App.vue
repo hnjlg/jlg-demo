@@ -47,8 +47,8 @@
             <jlg-input
               v-model="formData.input"
               :tool-tip-props="{
-								effect: 'light',
-							}"
+                effect: 'light',
+              }"
             ></jlg-input>
           </jlg-form-item>
         </jlg-grid-cell>
@@ -141,19 +141,19 @@ const rules = reactive({
   input: [{ required: true, message: "Please input input", trigger: "blur" }]
 });
 
-const gridLayoutProps = computed<T_JlgForm_Props["gridLayoutProps"]>(()=> {
+const gridLayoutProps = computed<T_JlgForm_Props["gridLayoutProps"]>(() => {
   return {
     padding: {
-      small:"0px",
-      default:"10px",
-      lager:"20px"
+      small: "0px",
+      default: "10px",
+      lager: "20px"
     }[config.value.style],
     flow: "row",
     columns: config.value.col,
     gap: {
-      small:"10px",
-      default:"50px",
-      lager:"100px"
+      small: "10px",
+      default: "50px",
+      lager: "100px"
     }[config.value.style],
     inline: true,
     border: false
