@@ -42,7 +42,10 @@
           <jlg-form-item
             label="Input测试placeholder"
             prop="input"
-            :validate-rules="[[E_FormValidatorRulesValidateFunEnum.必填校验], [E_FormValidatorRulesValidateFunEnum.小数位校验, 0]]"
+            :validate-rules="[
+              [E_FormValidatorRulesValidateFunEnum.必填校验],
+              [E_FormValidatorRulesValidateFunEnum.小数位校验, 0],
+            ]"
           >
             <jlg-input
               v-model="formData.input"
@@ -63,7 +66,10 @@
         </jlg-grid-cell>
         <jlg-grid-cell :width="1" :height="1">
           <jlg-form-item label="number">
-            <jlg-input-number v-model="formData.number" @change="valueChange"></jlg-input-number>
+            <jlg-input-number
+              v-model="formData.number"
+              @change="valueChange"
+            ></jlg-input-number>
           </jlg-form-item>
         </jlg-grid-cell>
         <jlg-form-item label="Select测试placeholder">
@@ -78,7 +84,12 @@
         </jlg-form-item>
         <jlg-grid-cell :width="1" :height="1">
           <jlg-form-item label="time-select">
-            <jlg-time-select v-model="formData.timeSelect" start="08:30" step="00:15" end="18:30" />
+            <jlg-time-select
+              v-model="formData.timeSelect"
+              start="08:30"
+              step="00:15"
+              end="18:30"
+            />
           </jlg-form-item>
         </jlg-grid-cell>
         <jlg-grid-cell :width="1" :height="1">
@@ -103,18 +114,7 @@
 import { computed, reactive, ref } from "vue";
 import { JlgGridLayout, JlgGridCell } from "jlg-ui";
 import {
-  JlgForm,
-  JlgFormItem,
-  JlgRadioGroup,
-  JlgRadio,
-  JlgRate,
-  JlgDatePicker,
-  JlgInput,
-  JlgInputNumber,
-  JlgSelect,
-  JlgOption,
-  JlgTimeSelect,
-  E_FormValidatorRulesValidateFunEnum
+  E_FormValidatorRulesValidateFunEnum,
 } from "jlg-form-ui";
 import { ElButton } from "element-plus";
 import { T_JlgForm_Props } from "../node_modules/jlg-form-ui/dist/packages/form/type";
@@ -123,8 +123,8 @@ const JlgFormRef = ref();
 
 const config = ref({
   col: 5,
-  style: 'small',
-  labelPosition: 'left'
+  style: "small",
+  labelPosition: "left",
 });
 
 const formData = ref({
@@ -134,11 +134,11 @@ const formData = ref({
   datePicker: "",
   timeSelect: "",
   rate: 0,
-  radio: ""
+  radio: "",
 });
 
 const rules = reactive({
-  input: [{ required: true, message: "Please input input", trigger: "blur" }]
+  input: [{ required: true, message: "Please input input", trigger: "blur" }],
 });
 
 const gridLayoutProps = computed<T_JlgForm_Props["gridLayoutProps"]>(() => {
@@ -146,25 +146,25 @@ const gridLayoutProps = computed<T_JlgForm_Props["gridLayoutProps"]>(() => {
     padding: {
       small: "0px",
       default: "10px",
-      lager: "20px"
+      lager: "20px",
     }[config.value.style],
     flow: "row",
     columns: config.value.col,
     gap: {
       small: "10px",
       default: "50px",
-      lager: "100px"
+      lager: "100px",
     }[config.value.style],
     inline: true,
-    border: false
-  }
+    border: false,
+  };
 });
 
 const options = computed(() => {
   return new Array(10).fill(0, 0, 10).map((_i, index) => {
     return {
       value: index,
-      label: "Option" + index
+      label: "Option" + index,
     };
   });
 });

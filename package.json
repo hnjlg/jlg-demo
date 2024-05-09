@@ -9,7 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "jlg-form-ui": "^0.0.27",
+        "jlg-form-ui": "^0.0.30",
         "vue": "^3.4.21"
     },
     "devDependencies": {

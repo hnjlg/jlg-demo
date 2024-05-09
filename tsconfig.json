@@ -21,6 +21,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "types": [
+      "element-plus/global",
+      "jlg-form-ui/global"
+    ]
   },
   "include": [
     "src/**/*.ts",
