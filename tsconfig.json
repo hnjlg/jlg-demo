@@ -23,7 +23,8 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "element-plus/global",
-      "jlg-form-ui/global"
+      "jlg-form-ui/global",
+      "jlg-ui/global"
     ]
   },
   "include": [
