@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "jlg-form-ui": "^0.0.30",
-        "jlg-ui": "^0.0.3",
+        "jlg-ui": "^0.0.5",
         "vue": "^3.4.21"
     },
     "devDependencies": {
