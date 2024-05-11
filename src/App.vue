@@ -239,17 +239,17 @@
       </jlg-grid-cell>
     </jlg-grid-layout>
     <jlg-menu
-		class="change-style"
-		:menu-data="menuData"
-		:default-active="defaultActive"
-		:el-popover-props="{
-			width: 200,
-			trigger: 'hover',
-			hideAfter: 0,
-		}"
-		@three-level-menu-click="threeLevelMenuClick"
-		@collect-click="collectClick"
-	></jlg-menu>
+      class="change-style"
+      :menu-data="menuData"
+      :default-active="defaultActive"
+      :el-popover-props="{
+        width: 200,
+        trigger: 'hover',
+        hideAfter: 0,
+      }"
+      @three-level-menu-click="threeLevelMenuClick"
+      @collect-click="collectClick"
+    ></jlg-menu>
   </div>
 </template>
 
@@ -259,7 +259,7 @@ import { JlgCollapse } from "jlg-ui";
 import { E_FormValidatorRulesValidateFunEnum } from "jlg-form-ui";
 import { ElButton } from "element-plus";
 import { T_JlgForm_Props } from "../node_modules/jlg-form-ui/dist/packages/form/type";
-import {I_JlgMenu_MenuDataItem} from '../node_modules/jlg-ui/dist/packages/menu/type';
+import { I_JlgMenu_MenuDataItem } from "../node_modules/jlg-ui/dist/packages/menu/type";
 
 const JlgFormRef = ref();
 
@@ -334,138 +334,148 @@ const validator = () => {
 };
 
 const menuData = ref<I_JlgMenu_MenuDataItem[]>([
-	{
-		title: '菜单名称很长很长',
-		iconClass: '',
-		index: '1',
-		isCollect: false,
-		children: [
-			{
-				title: '菜单1-1',
-				iconClass: '',
-				index: '1-1',
-				isCollect: false,
-				children: [
-					{
-						title: '菜单1-1-1',
-						iconClass: '',
-						index: '1-1-1',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-1-2',
-						iconClass: '',
-						index: '1-1-2',
-						isCollect: true,
-					},
-				],
-			},
-			{
-				title: '菜单1-2',
-				iconClass: '',
-				index: '1-2',
-				isCollect: false,
-				children: [
-					{
-						title: '菜单1-2-1',
-						iconClass: '',
-						index: '1-2-1',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-2-2',
-						iconClass: '',
-						index: '1-2-2',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-2-3',
-						iconClass: '',
-						index: '1-2-3',
-						isCollect: false,
-					},
-				],
-			},
-			{
-				title: '菜单1-3',
-				iconClass: '',
-				index: '1-3',
-				isCollect: false,
-				children: [
-					{
-						title: '菜单1-3-1',
-						iconClass: '',
-						index: '1-3-1',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-3-2',
-						iconClass: '',
-						index: '1-3-2',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-3-3',
-						iconClass: '',
-						index: '1-3-3',
-						isCollect: false,
-					},
-					{
-						title: '菜单1-3-4',
-						iconClass: '',
-						index: '1-3-4',
-						isCollect: false,
-					},
-				],
-			},
-		],
-	},
-	{
-		title: '菜单2',
-		iconClass: '',
-		index: '2',
-		isCollect: false,
-		children: [
-			{
-				title: '菜单2-1',
-				iconClass: '',
-				index: '2-1',
-				isCollect: false,
-				children: [
-					{
-						title: '菜单2-1-1',
-						iconClass: '',
-						index: '2-1-1',
-						isCollect: false,
-					},
-				],
-			},
-		],
-	},
+  {
+    title: "菜单名称很长很长",
+    iconClass: "",
+    index: "1",
+    isCollect: false,
+    children: [
+      {
+        title: "菜单1-1",
+        iconClass: "",
+        index: "1-1",
+        isCollect: false,
+        children: [
+          {
+            title: "菜单1-1-1",
+            iconClass: "",
+            index: "1-1-1",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-1-2",
+            iconClass: "",
+            index: "1-1-2",
+            isCollect: true,
+          },
+        ],
+      },
+      {
+        title: "菜单1-2",
+        iconClass: "",
+        index: "1-2",
+        isCollect: false,
+        children: [
+          {
+            title: "菜单1-2-1",
+            iconClass: "",
+            index: "1-2-1",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-2-2",
+            iconClass: "",
+            index: "1-2-2",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-2-3",
+            iconClass: "",
+            index: "1-2-3",
+            isCollect: false,
+          },
+        ],
+      },
+      {
+        title: "菜单1-3",
+        iconClass: "",
+        index: "1-3",
+        isCollect: false,
+        children: [
+          {
+            title: "菜单1-3-1",
+            iconClass: "",
+            index: "1-3-1",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-3-2",
+            iconClass: "",
+            index: "1-3-2",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-3-3",
+            iconClass: "",
+            index: "1-3-3",
+            isCollect: false,
+          },
+          {
+            title: "菜单1-3-4",
+            iconClass: "",
+            index: "1-3-4",
+            isCollect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "菜单2",
+    iconClass: "",
+    index: "2",
+    isCollect: false,
+    children: [
+      {
+        title: "菜单2-1",
+        iconClass: "",
+        index: "2-1",
+        isCollect: false,
+        children: [
+          {
+            title: "菜单2-1-1",
+            iconClass: "",
+            index: "2-1-1",
+            isCollect: false,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
-const defaultActive = ref<I_JlgMenu_MenuDataItem['index']>('');
+const defaultActive = ref<I_JlgMenu_MenuDataItem["index"]>("");
 
-const changeCollect = (data: I_JlgMenu_MenuDataItem[], index: I_JlgMenu_MenuDataItem['index']) => {
-	return data.map((item) => {
-		if (item.index === index) {
-			item.isCollect = !item.isCollect;
-		}
-		if (item.children) {
-			changeCollect(item.children, index);
-		}
-		return item;
-	});
+const changeCollect = (
+  data: I_JlgMenu_MenuDataItem[],
+  index: I_JlgMenu_MenuDataItem["index"]
+) => {
+  return data.map((item) => {
+    if (item.index === index) {
+      item.isCollect = !item.isCollect;
+    }
+    if (item.children) {
+      changeCollect(item.children, index);
+    }
+    return item;
+  });
 };
 
 const collectClick = (menuItem: I_JlgMenu_MenuDataItem) => {
-	alert('点击了收藏图标');
-	menuData.value = changeCollect(menuData.value, menuItem.index);
+  alert("点击了收藏图标");
+  menuData.value = changeCollect(menuData.value, menuItem.index);
 };
 
-const threeLevelMenuClick = (menuItem: I_JlgMenu_MenuDataItem, menuArr: [I_JlgMenu_MenuDataItem, I_JlgMenu_MenuDataItem, I_JlgMenu_MenuDataItem]) => {
-	alert('你点击了' + menuItem.title);
-	defaultActive.value = menuArr[0].index;
+const threeLevelMenuClick = (
+  menuItem: I_JlgMenu_MenuDataItem,
+  menuArr: [
+    I_JlgMenu_MenuDataItem,
+    I_JlgMenu_MenuDataItem,
+    I_JlgMenu_MenuDataItem
+  ]
+) => {
+  alert("你点击了" + menuItem.title);
+  defaultActive.value = menuArr[0].index;
 };
 </script>
 
