@@ -18,8 +18,8 @@
             :rules="rules"
             :size="props.config.style"
           >
-            <jlg-grid-layout v-bind="gridLayoutProps">
-              <jlg-grid-cell :width="1" :height="1">
+            <jlg-flex-layout v-bind="flexLayoutProps">
+              <jlg-flex-cell :col="1">
                 <jlg-form-item
                   label="Input测试placeholder"
                   prop="input"
@@ -35,8 +35,8 @@
                     }"
                   ></jlg-input>
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item
                   label="datePicker"
                   prop="datePicker"
@@ -46,16 +46,16 @@
                 >
                   <jlg-date-picker v-model="formData.datePicker" type="date" />
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item label="number">
                   <jlg-input-number
                     v-model="formData.number"
                     @change="valueChange"
                   ></jlg-input-number>
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item label="Select测试placeholder">
                   <jlg-select v-model="formData.select">
                     <jlg-option
@@ -66,8 +66,8 @@
                     />
                   </jlg-select>
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item label="time-select">
                   <jlg-time-select
                     v-model="formData.timeSelect"
@@ -76,21 +76,21 @@
                     end="18:30"
                   />
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item label="rate">
                   <jlg-rate v-model="formData.rate" />
                 </jlg-form-item>
-              </jlg-grid-cell>
-              <jlg-grid-cell :width="1" :height="1">
+              </jlg-flex-cell>
+              <jlg-flex-cell :col="1">
                 <jlg-form-item label="radio">
                   <jlg-radio-group v-model="formData.radio">
                     <jlg-radio value="1" label="Option1">Option 1</jlg-radio>
                     <jlg-radio value="2" label="Option2">Option 2</jlg-radio>
                   </jlg-radio-group>
                 </jlg-form-item>
-              </jlg-grid-cell>
-            </jlg-grid-layout>
+              </jlg-flex-cell>
+            </jlg-flex-layout>
           </jlg-form>
         </jlg-collapse-item>
         <jlg-collapse-item title="Feedback" name="2">
@@ -113,6 +113,7 @@ import { computed, reactive, ref } from "vue";
 import { E_FormValidatorRulesValidateFunEnum } from "jlg-form-ui";
 import { T_JlgForm_Props } from "../node_modules/jlg-form-ui/dist/packages/form/type";
 import {Setting} from '@element-plus/icons-vue';
+import { T_Jlg_Flex_Layout_Props } from "../node_modules/jlg-ui/dist/packages/flex-layout/type";
 
 const props = withDefaults(
   defineProps<{
@@ -165,6 +166,17 @@ const gridLayoutProps = computed<T_JlgForm_Props["gridLayoutProps"]>(() => {
     }[props.config.style as string],
     inline: true,
     border: false,
+  };
+});
+
+const flexLayoutProps = computed<T_Jlg_Flex_Layout_Props>(() => {
+  return {
+    col: props.config.col,
+    gap: {
+      small: "10px",
+      default: "50px",
+      lager: "100px",
+    }[props.config.style as string],
   };
 });
 
